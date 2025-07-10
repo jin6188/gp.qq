@@ -10,23 +10,34 @@
     body {
       margin: 0;
       font-family: 'Noto Sans SC', "微软雅黑", sans-serif;
-      background: url('IMG_0289.jpeg') no-repeat center center fixed;
-      background-size: cover;
       color: #fff;
-      height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #000; /* 页面底部和左右黑色背景 */
     }
 
-    /* 表单容器 */
+    /* 背景图部分 */
+    .top-section {
+      background: url('IMG_0289.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      height: 50%; /* 背景图占据页面上半部分 */
+      width: 100%;
+    }
+
+    /* 中间表单容器 */
     .container {
-      background-color: rgba(0, 0, 0, 0.75);
+      background-color: rgba(0, 0, 0, 0.75); /* 黑色背景半透明 */
       padding: 30px 40px;
       border-radius: 12px;
       width: 320px;
       box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
       text-align: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); /* 垂直居中 */
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%); /* 水平居中 + 垂直居中 */
     }
 
     /* 标题 */
@@ -96,6 +107,8 @@
   </style>
 </head>
 <body>
+  <div class="top-section"></div> <!-- 背景图部分 -->
+
   <div class="container">
     <h1>请选择登录方式</h1>
     <div class="login-buttons">
