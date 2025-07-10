@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>礼包兑换中心</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+    
+    /* 页面整体样式 */
+    body {
+      margin: 0;
+      font-family: 'Noto Sans SC', "微软雅黑", sans-serif;
+      background: url('IMG_0289.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 表单容器 */
+    .container {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px 40px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
+      text-align: center;
+    }
+
+    /* 标题 */
+    .container h1 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    /* 登录按钮 */
+    .login-buttons button {
+      background-color: #ffc107;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 25px;
+      margin: 0 8px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .login-buttons button:hover {
+      background-color: #ffb300;
+    }
+
+    /* 下拉框、输入框 */
+    select, input[type="text"] {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    /* 验证码图片 */
+    .captcha-section {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .captcha-img {
+      width: 100px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid #ffc107;
+    }
+
+    /* 兑换按钮 */
+    .submit {
+      background-color: #ffc107;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    .submit:hover {
+      background-color: #ffb300;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -14,14 +104,19 @@
     </div>
 
     <select>
-      <option>请选择角色</option>
+      <option value="" disabled selected>请选择角色</option>
+      <option value="1">角色1</option>
+      <option value="2">角色2</option>
+      <option value="3">角色3</option>
     </select>
 
-    <input type="text" placeholder="输入 CDKEY">
-    <input type="text" placeholder="输入验证码">
-    <img src="IMG_0289.jpeg" alt="验证码" class="captcha-img">
+    <input type="text" placeholder="输入 CDKEY" />
 
-    
+    <div class="captcha-section">
+      <input type="text" placeholder="输入验证码" style="flex:1" />
+      <img src="IMG_0289.jpeg" alt="验证码" class="captcha-img" title="点击更换验证码" />
+    </div>
+
     <button class="submit">立即兑换</button>
   </div>
 </body>
